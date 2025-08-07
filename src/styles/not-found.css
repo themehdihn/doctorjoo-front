@@ -1,0 +1,103 @@
+/* بلوک اصلی */
+.not-found {
+  background-color: #f8fafc; /* معادل bg-secondary-0 */
+  min-height: 100vh; /* معادل h-screen */
+}
+
+/* المان کانتینر */
+.not-found__container {
+  display: flex;
+  justify-content: center;
+  padding-top: 2.5rem; /* معادل pt-10 */
+}
+
+/* المان محتوای اصلی */
+.not-found__content {
+  max-width: 28rem; /* معادل max-w-sm */
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem; /* معادل gap-y-8 */
+}
+
+/* پاسخ‌های رسانه‌ای (media queries) */
+@media (min-width: 640px) {
+  .not-found__content {
+    max-width: 32rem; /* معادل sm:max-w-lg */
+  }
+}
+
+@media (min-width: 1024px) {
+  .not-found__content {
+    max-width: 42rem; /* معادل lg:max-w-2xl */
+  }
+}
+
+/* المان آیکون 404 */
+.not-found__icon {
+  width: 10rem; /* معادل w-40 */
+  height: 10rem; /* معادل h-40 */
+  color: #374151; /* معادل text-secondary-800 */
+}
+
+@media (min-width: 768px) {
+  .not-found__icon {
+    width: 24rem; /* معادل md:w-96 */
+    height: 24rem; /* معادل md:h-96 */
+  }
+}
+
+/* المان عنوان */
+.not-found__title {
+  font-weight: 700; /* معادل font-bold */
+  font-size: 3rem; /* معادل text-5xl */
+  color: #1f2937; /* معادل text-secondary-900 */
+}
+
+/* المان پیام */
+.not-found__message {
+  font-weight: 700; /* معادل font-bold */
+  font-size: 1.875rem; /* معادل text-3xl */
+  color: #1f2937; /* معادل text-secondary-900 */
+}
+
+/* المان دکمه‌ها */
+.not-found__buttons {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+/* المان دکمه */
+.not-found__button {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem; /* معادل gap-x-2 */
+  font-size: 1.125rem; /* معادل text-lg */
+  color: #1e40af; /* معادل text-primary-900 */
+  background: none;
+  border: none;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+/* مودیفایر برای دکمه بازگشت */
+.not-found__button--back {
+  flex-direction: row-reverse; /* آیکون در سمت چپ */
+}
+
+/* مودیفایر برای دکمه خانه */
+.not-found__button--home {
+  flex-direction: row; /* آیکون در سمت راست */
+}
+
+/* افکت هاور برای دکمه‌ها */
+.not-found__button:hover {
+  color: #1e3a8a; /* رنگ تیره‌تر برای هاور */
+}
+
+/* المان آیکون دکمه */
+.not-found__button-icon {
+  font-size: 1.125rem; /* هم‌اندازه با متن دکمه */
+}

@@ -1,7 +1,8 @@
 import { ArrowLeft, Medal, User } from "iconsax-reactjs";
 import "./DoctorCart.css";
+import { Link } from "react-router-dom";
 
-function DoctorCart({ cover, doctorName, specialty }) {
+function DoctorCart({ id,cover, doctorName, specialty }) {
   return (
     <div className="doctor-list__cart">
       <div className="doctor-list__cart-img-wrapper">
@@ -43,10 +44,10 @@ function DoctorCart({ cover, doctorName, specialty }) {
           <Medal className="doctor-list__cart-icon" />
           {specialty}
         </p>
-        <a href="#" className="doctor-list__cart-cta">
+        <Link to={`/doctors/${id}`} className="doctor-list__cart-cta">
           دریافت نوبت
           <ArrowLeft className="doctor-list__cart-cta-icon" />
-        </a>
+        </Link>
       </div>
       {/* Cart Content */}
     </div>

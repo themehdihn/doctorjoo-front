@@ -1,39 +1,9 @@
-import DoctorCart from "./Cart/DoctorCart";
+import DoctorCart from "../../modules/Cart/DoctorCart";
+import { doctorsData } from "../../../constants/doctorData";
 import "./DoctorList.css";
+import { Link } from "react-router-dom";
 
 function DoctorList() {
-  const doctorsData = [
-    {
-      id: 1,
-      cover: "../../../../public/doctorjoo.png",
-      doctorName: "مهدی حسینی",
-      specialty: "متخصص قلب و عروق",
-    },
-    {
-      id: 2,
-      cover: "../../../../public/doctorjoo.png",
-      doctorName: "مهدی حسینی",
-      specialty: "متخصص قلب و عروق",
-    },
-    {
-      id: 3,
-      cover: "../../../../public/doctorjoo.png",
-      doctorName: "مهدی حسینی",
-      specialty: "متخصص قلب و عروق",
-    },
-    {
-      id: 4,
-      cover: "../../../../public/doctorjoo.png",
-      doctorName: "مهدی حسینی",
-      specialty: "متخصص قلب و عروق",
-    },
-    {
-      id: 5,
-      cover: "../../../../public/doctorjoo.png",
-      doctorName: "مهدی حسینی",
-      specialty: "متخصص قلب و عروق",
-    },
-  ];
   return (
     <section className="doctor-list">
       <div className="doctor-list__content">
@@ -59,9 +29,9 @@ function DoctorList() {
       {/* DoctorList Wrapper */}
 
       <div className="doctor__list-more">
-        <a className="doctor__list-more-btn" href="">
+        <Link to="/doctors" className="doctor__list-more-btn" href="">
           مشاهده همه
-        </a>
+        </Link>
       </div>
       {/* Show More Btn */}
     </section>

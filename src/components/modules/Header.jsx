@@ -1,3 +1,4 @@
+import CustomNavLink from "./CustomNavLink";
 import "./Header.css";
 
 function Header() {
@@ -13,10 +14,10 @@ function Header() {
       {/* Logo */}
 
       <ul className="header__nav">
-        <li className="header__nav-item">صفحه اصلی</li>
-        <li className="header__nav-item">صفحه اصلی</li>
-        <li className="header__nav-item">صفحه اصلی</li>
-        <li className="header__nav-item">صفحه اصلی</li>
+        <CustomNavLink to="/">صفحه اصلی</CustomNavLink>
+        <CustomNavLink to="/doctors">پزشکان</CustomNavLink>
+        <CustomNavLink to="/contact">تماس با ما</CustomNavLink>
+        <CustomNavLink to="/about">درباره ما</CustomNavLink>
       </ul>
       {/* Nav */}
       <div className="header__actions">
