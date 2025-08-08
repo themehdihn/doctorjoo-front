@@ -1,0 +1,174 @@
+.doctor-details {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.doctor-details__container {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+@media (min-width: 640px) {
+  .doctor-details__container {
+    flex-direction: row;
+  }
+}
+
+.doctor-details__image-wrapper {
+  width: 100%;
+}
+
+@media (min-width: 640px) {
+  .doctor-details__image-wrapper {
+    max-width: 18rem;
+  }
+}
+
+.doctor-details__image {
+  width: 100%;
+  border-radius: 0.5rem;
+  background-color: #3b82f6;
+}
+
+.doctor-details__info {
+  flex: 1;
+  border: 1px solid #d1d5db;
+  border-radius: 0.5rem;
+  padding: 2rem;
+  background-color: #ffffff;
+  margin-top: 5rem;
+}
+
+@media (min-width: 640px) {
+  .doctor-details__info {
+    margin-top: 0;
+  }
+}
+
+.doctor-details__name {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 2.4rem;
+  font-weight: 700;
+  color: #111827;
+}
+
+.doctor-details__verified-icon {
+  width: 1.25rem;
+}
+
+.doctor-details__credentials {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 1.4rem;
+  color: #4b5563;
+  margin-top: 0.25rem;
+}
+
+.doctor-details__degree {
+  margin: 0;
+}
+
+.doctor-details__experience {
+  padding: 0.125rem 0.5rem;
+  border: 1px solid #d1d5db;
+  border-radius: 9999px;
+  font-size: 1.2rem;
+  background: none;
+  cursor: pointer;
+}
+
+.doctor-details__about {
+  margin-top: 0.75rem;
+}
+
+.doctor-details__about-title {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  font-size: 1.4rem;
+  font-weight: 500;
+  color: #111827;
+}
+
+.doctor-details__info-icon {
+  width: 1rem;
+}
+
+.doctor-details__about-text {
+  font-size: 1.4rem;
+  color: #6b7280;
+  max-width: 90rem;
+  margin-top: 0.25rem;
+}
+
+.doctor-details__fee {
+  font-size: 1.6rem;
+  font-weight: 500;
+  color: #6b7280;
+  margin-top: 1rem;
+}
+
+.doctor-details__fee-amount {
+  color: #4b5563;
+}
+
+.doctor-details__booking {
+  margin-top: 1rem;
+  font-size: 1.6rem;
+  font-weight: 500;
+  color: #374151;
+}
+
+@media (min-width: 640px) {
+  .doctor-details__booking {
+    margin-left: 18rem;
+    padding-left: 1rem;
+  }
+}
+
+.doctor-details__booking-title {
+  margin: 0;
+}
+
+.doctor-details__slots {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  overflow-x: auto;
+  margin-top: 1rem;
+}
+
+.doctor-details__slot {
+  text-align: center;
+  padding: 1rem;
+
+  min-width: 4rem;
+  border: 1px solid #e5e7eb;
+  border-radius: 1rem;
+  cursor: pointer;
+}
+
+.doctor-details__slot--active {
+  background-color: #3b82f6;
+  color: #ffffff;
+}
+
+.doctor-details__book-button {
+  background-color: #3b82f6;
+  color: #ffffff;
+  font-size: 0.875rem;
+  font-weight: 300;
+  padding: 0.75rem 3.5rem;
+  border-radius: 9999px;
+  border: none;
+  cursor: pointer;
+  margin-top: 1.25rem;
+}
+
+.doctor-details__book-button:hover {
+  background-color: #2563eb;
+}

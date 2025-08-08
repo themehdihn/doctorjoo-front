@@ -2,8 +2,19 @@ import DoctorCart from "../../modules/Cart/DoctorCart";
 import { doctorsData } from "../../../constants/doctorData";
 import "./DoctorList.css";
 import { Link } from "react-router-dom";
+import { useEffect, useState } from "react";
 
 function DoctorList() {
+  const [data,setDate]=useState([])
+   useEffect(() => {
+        console.log("landing render")
+      fetch("http://localhost:4000/api/doctor/all-doctor")
+        .then((res) => res.json())
+        .then((data) => {
+          console.log("data",data.data.doctors);
+          setDate(data.data.doctors)
+        });
+    }, []);
   return (
     <section className="doctor-list">
       <div className="doctor-list__content">
@@ -21,7 +32,7 @@ function DoctorList() {
       </div>
       {/* Content */}
       <div className="doctor-list__wrapper">
-        {doctorsData.map((item) => (
+        {data.map((item) => (
           <DoctorCart {...item} />
         ))}
         {/* Cart */}

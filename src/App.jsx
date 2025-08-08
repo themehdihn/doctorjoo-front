@@ -8,20 +8,23 @@ import Contact from "./pages/Contact";
 import About from "./pages/About";
 import NotFound from "./pages/NotFound";
 import NotAccess from "./pages/NotAccess";
+import AppContextProvider from "./context/AppContext";
 
 function App() {
   return (
-    <Routes>
-      <Route path="/doctors" element={<Doctors />} />
-      <Route path="/auth" element={<Auth />} />
-      <Route path="/doctors/:id" element={<DoctorDetails />} />
-      <Route path="/contact" element={<Contact />} />
-      <Route path="/about" element={<About />} />
+    <AppContextProvider>
+      <Routes>
+        <Route path="/doctors" element={<Doctors />} />
+        <Route path="/auth" element={<Auth />} />
+        <Route path="/doctors/:docId" element={<DoctorDetails />} />
+        <Route path="/contact" element={<Contact />} />
+        <Route path="/about" element={<About />} />
 
-      <Route path="/" element={<Landing />} />
-      <Route path="*" element={<NotFound />} />
-      <Route path="/not-access" element={<NotAccess/>}/>
-    </Routes>
+        <Route path="/" element={<Landing />} />
+        <Route path="*" element={<NotFound />} />
+        <Route path="/not-access" element={<NotAccess />} />
+      </Routes>
+    </AppContextProvider>
   );
 }
 
