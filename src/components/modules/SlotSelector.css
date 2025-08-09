@@ -1,9 +1,6 @@
 .slot-selector {
-  display: flex;
-  align-items: center;
-  gap: 0.75rem;
   margin-top: 3rem;
-  direction: rtl; 
+  direction: rtl;
 }
 
 .slot-selector__button-container {
@@ -12,22 +9,22 @@
 }
 
 .slot-selector__scroll-container {
-  flex: 1;
+  /* flex: 1; */
   overflow: hidden;
 }
 
 .slot-selector__slots {
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
   gap: 0.75rem;
-  overflow-x: auto;
   padding-bottom: 0.5rem;
   scroll-behavior: smooth;
 }
 
 .slot-selector__slot {
-  padding: 0.5rem 1rem;
+  padding: 1rem 2rem;
   border: 1px solid #e5e7eb;
-  border-radius: 9999px;
+  border-radius: 1rem;
   font-size: 1.2rem;
   color: #374151;
   cursor: pointer;
@@ -36,7 +33,7 @@
 }
 
 .slot-selector__slot--active {
-  background-color: #3b82f6;
+  background-color: var(--color-primary);
   color: #ffffff;
 }
 

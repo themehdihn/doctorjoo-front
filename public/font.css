@@ -2,19 +2,40 @@
     font-family: "Vazir";
     font-style: normal;
     font-weight: 400;
-    src: url("./fonts/Vazirmatn-Regular.woff2") format("woff2");
+    src: url("./fonts/Vazirmatn-FD-Regular.woff2") format("woff2");
+}
+
+@font-face {
+    font-family: "Vazir";
+    font-style: normal;
+    font-weight: 500;
+    src: url("./fonts/Vazirmatn-FD-Medium.woff2") format("woff2");
+}
+
+@font-face {
+    font-family: "Vazir";
+    font-style: normal;
+    font-weight: 600;
+    src: url("./fonts/Vazirmatn-FD-Bold.woff2") format("woff2");
 }
 
 @font-face {
     font-family: "Vazir";
     font-style: normal;
     font-weight: 700;
-    src: url("./fonts/Vazirmatn-Bold.woff2") format("woff2");
+    src: url("./fonts/Vazirmatn-FD-SemiBold.woff2") format("woff2");
+}
+
+@font-face {
+    font-family: "Vazir";
+    font-style: normal;
+    font-weight: 800;
+    src: url("./fonts/Vazirmatn-FD-ExtraBold.woff2") format("woff2");
 }
 
 @font-face {
     font-family: "Vazir";
     font-style: normal;
     font-weight: 900;
-    src: url("./fonts/Vazirmatn-Black.woff2") format("woff2");
+    src: url("./fonts/Vazirmatn-FD-Black.woff2") format("woff2");
 }

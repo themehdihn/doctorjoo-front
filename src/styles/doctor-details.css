@@ -1,4 +1,4 @@
-.doctor-details {
+/* .doctor-details {
   max-width: 1200px;
   margin: 0 auto;
 }
@@ -7,6 +7,7 @@
   display: flex;
   flex-direction: column;
   gap: 1rem;
+  background-color: red;
 }
 
 @media (min-width: 640px) {
@@ -170,5 +171,154 @@
 }
 
 .doctor-details__book-button:hover {
+  background-color: #2563eb;
+} */
+
+.doctor-details {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  margin-top: 4rem;
+}
+.doctor-details__wrapper {
+  grid-column: 1 / 3;
+  background-color: white;
+  border-radius: 1rem;
+  box-shadow: 0 4px 40px 0 rgba(0, 0, 0, 0.05);
+}
+
+.doctor-details__content-cover-wrapper {
+  max-width: 15rem;
+  height: auto;
+}
+
+.doctor-details__content-cover-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  background-color: #e7e7e7;
+  border-radius: 0.2rem;
+}
+
+.doctor-details__content {
+  display: flex;
+  /* align-items: center; */
+  flex-wrap: wrap;
+  gap: 1rem;
+  padding: 1.5rem;
+  padding-bottom: 3rem;
+  border-bottom: 1px solid #e7e7e78f;
+  /* background-color: red; */
+}
+
+.doctor-details__content-info {
+}
+
+.doctor-details__content-info-name {
+  font-size: 2rem;
+  color: rgb(17, 24, 39);
+  font-weight: 700;
+}
+
+.doctor-details__content-info-specialty {
+  font-size: 1.4rem;
+  color: rgb(75, 85, 99);
+}
+
+.doctor-details__content-info-address {
+  color: rgb(107, 114, 128);
+  font-size: 1.4rem;
+}
+
+.doctor-details__content-info-firstappo {
+  color: rgb(107, 114, 128);
+  font-size: 1.4rem;
+}
+
+.doctor-details__bio {
+  margin-top: 2rem;
+  padding: 1.5rem;
+}
+
+.doctor-details__bio-title {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  font-weight: 600;
+  font-size: 1.8rem;
+  line-height: 157.3%;
+  margin-bottom: 1.3rem;
+}
+
+.doctor-details__bio-description {
+  font-size: 1.4rem;
+  font-weight: 400;
+  color: #5d5d5d;
+}
+
+.doctor-details__calender {
+  background-color: white;
+   box-shadow: 0 4px 40px 0 rgba(0, 0, 0, 0.05);
+  border-radius: 1rem;
+  padding: 1.5rem;
+}
+
+.doctor-details__calender-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid #e7e7e77d;
+}
+
+.doctor-details__calender-title {
+  font-size: 1.8rem;
+  font-weight: bold;
+}
+
+.doctor-details__calender-date {
+  font-size: 1.5rem;
+  font-weight: 400;
+  color: #888888;
+}
+
+.doctor-details__calender-slots {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 0.7rem;
+  margin-top: 1.5rem;
+}
+
+.doctor-details__slot {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1.2rem;
+  min-width: 4rem;
+  background-color: #F7F7F7;
+  /* border: 1px solid #e5e7eb; */
+  border-radius: 1rem;
+  cursor: pointer;
+}
+
+.doctor-details__slot--active {
+  background-color: var(--color-primary);
+  color: #ffffff;
+}
+
+.doctor-details__calender-button {
+  width: 100%;
+  background-color: var(--color-primary);
+  color: #ffffff;
+  font-size: 1.6rem;
+  font-weight: 500;
+  padding: 1rem;
+  border-radius: 1rem;
+  border: none;
+  cursor: pointer;
+  margin-top: 1.25rem;
+}
+
+.doctor-details__calender-button:hover {
   background-color: #2563eb;
 }

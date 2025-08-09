@@ -9,6 +9,8 @@ import SlotSelector from "../components/modules/SlotSelector";
 import "../styles/doctor-details.css";
 import { AppContext } from "../context/AppContext";
 import axios from "axios";
+import { InfoCircle } from "iconsax-reactjs";
+import { formatToShamsiDate, toLocalDateShort } from "../utils/dateFormatter";
 
 function DoctorDetails() {
   const { docId } = useParams();
@@ -67,18 +69,10 @@ function DoctorDetails() {
     const formatPersianTime = (date) => {
       const hours = date.getHours();
       const minutes = date.getMinutes().toString().padStart(2, "0");
-      let period;
-      if (hours >= 0 && hours < 12) {
-        period = "صبح";
-      } else if (hours >= 12 && hours < 18) {
-        period = "بعد از ظهر";
-      } else {
-        period = "عصر";
-      }
-      return `${hours}:${minutes} ${period}`;
+      return `${hours}:${minutes}`;
     };
 
-    for (let i = 0; i < 10; i++) {
+    for (let i = 0; i < 14; i++) {
       const currentDate = new Date(today);
       currentDate.setDate(today.getDate() + i);
 
@@ -170,81 +164,70 @@ function DoctorDetails() {
   return (
     <MainLayout>
       <Container>
-        <div>دکتر با ایدی {docId}</div>
         <div className="doctor-details">
-          {/* Doctor Details Section */}
-          <div className="doctor-details__container">
-            <div className="doctor-details__image-wrapper">
-              <img
-                className="doctor-details__image"
-                src={docInfo?.image}
-                //  src="../../public/doctorjoo.png"
-                // alt={`${docInfo.name}'s profile`}
-              />
-            </div>
-
-            <div className="doctor-details__info">
-              {/* Doc info: name, degree, experience */}
-              <p className="doctor-details__name">
-                {docInfo?.name}
-
-                {/* <img
-                  className="doctor-details__verified-icon"
-                  src={assets.verified_icon}
-                  alt="Verified"
-                /> */}
-              </p>
-              <div className="doctor-details__credentials">
-                <p className="doctor-details__degree">
-                  {/* {docInfo.degree} - {docInfo.speciality} */}
-                  فوق تخصص - قلب و عروق
-                </p>
-                <button className="doctor-details__experience">
-                  {/* {docInfo.experience} */}2 سال
-                </button>
+          <div className="doctor-details__wrapper">
+            <div className="doctor-details__content">
+              <div className="doctor-details__content-cover-wrapper">
+                <img
+                  className="doctor-details__content-cover-img"
+                  src="../../public/doctorjoo.png"
+                  alt=""
+                />
               </div>
-
-              {/* Doctor About */}
-              <div className="doctor-details__about">
-                <p className="doctor-details__about-title">
-                  About{" "}
-                  {/* <img
-                    className="doctor-details__info-icon"
-                    src={assets.info_icon}
-                    alt="Info"
-                  /> */}
+              {/* Doctor Image */}
+              <div className="doctor-details__content-info">
+                <h2 className="doctor-details__content-info-name">
+                  دکتر علی جعفری
+                </h2>
+                <p className="doctor-details__content-info-specialty">
+                  متخصص قلب و عروق
                 </p>
-                <p className="doctor-details__about-text">
-                  {/* {docInfo.about} */}
-                  Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-                  Repudiandae aperiam quae quos inventore repellendus porro,
-                  eveniet sequi explicabo iusto autem reiciendis? Ducimus
-                  deleniti cum eaque ab aut natus! Neque delectus aliquid natus,
-                  consequatur qui quae possimus ut autem placeat et voluptatibus
-                  blanditiis earum repudiandae modi molestias. Soluta ea
-                  quisquam suscipit illo laborum, quibusdam optio, architecto
-                  aspernatur at aliquid debitis pariatur iure. Adipisci
-                  praesentium magnam recusandae similique error odit maxime sed
-                  veniam facere, odio dolorem cumque nihil animi voluptas
-                  laudantium perspiciatis quaerat, optio, enim reiciendis
-                  architecto a accusantium quis beatae! Officia voluptates sit
-                  dolore odit numquam commodi, ut provident id neque!
+                <p className="doctor-details__content-info-address">
+                  آدرس مطب: همدان کوچه فلان خیابان فلان مجتمع فلان
+                </p>
+                <p className="doctor-details__content-info-firstappo">
+                  اولین نوبت در دسترس : دوشنبه ۲۹ مرداد
                 </p>
               </div>
-              <p className="doctor-details__fee">
-                Appointment fee:{" "}
-                <span className="doctor-details__fee-amount">
-                  45,000
-                  {/* {docInfo.fees} */}
-                </span>
+              {/* Info */}
+            </div>
+            {/* Contetnt */}
+
+            <div className="doctor-details__bio">
+              <h2 className="doctor-details__bio-title">
+                <InfoCircle size={20} />
+                درباره دکتر مهدی حسینی
+              </h2>
+              <p className="doctor-details__bio-description">
+                لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با
+                استفاده از طراحان گرافیک است، چاپگرها و متون بلکه روزنامه و مجله
+                در ستون و سطرآنچنان که لازم است، و برای شرایط فعلی تکنولوژی مورد
+                نیاز، و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد،
+                کتابهای زیادی در شصت و سه درصد گذشته حال و آینده، شناخت فراوان
+                جامعه و متخصصان را می طلبد، تا با نرم افزارها شناخت بیشتری را
+                برای طراحان رایانه ای علی الخصوص طراحان خلاقی، و فرهنگ پیشرو در
+                زبان فارسی ایجاد کرد، در این صورت می توان امید داشت که تمام و
+                دشواری موجود در ارائه راهکارها، و شرایط سخت تایپ به پایان رسد و
+                زمان مورد نیاز شامل حروفچینی دستاوردهای اصلی، و جوابگوی سوالات
+                پیوسته اهل دنیای موجود طراحی اساسا مورد استفاده قرار گیرد.
               </p>
             </div>
+            {/* Bio */}
+
+            <div className="doctor-details__comment">نظرات اینجا هندل میشه</div>
+            {/* Comment */}
           </div>
+          {/* Wrapper */}
 
-          {/* Booking Slots Section */}
-          <div className="doctor-details__booking">
-            <p className="doctor-details__booking-title">Booking slots</p>
-            <div className="doctor-details__slots">
+          <div className="doctor-details__calender">
+            <div className="doctor-details__calender-top">
+              <h2 className="doctor-details__calender-title">تقویم</h2>
+              <span className="doctor-details__calender-date">
+                {formatToShamsiDate(Date.now())}
+              </span>
+            </div>
+            {/* Top */}
+            <div className="doctor-details__calender-slots">
               {docSlots.length &&
                 docSlots.map((item, index) => (
                   <div
@@ -259,6 +242,7 @@ function DoctorDetails() {
                   </div>
                 ))}
             </div>
+            {/* Slots */}
 
             <SlotSelector
               docSlots={docSlots}
@@ -268,15 +252,14 @@ function DoctorDetails() {
             />
             <button
               onClick={bookAppointment}
-              className="doctor-details__book-button"
+              className="doctor-details__calender-button"
             >
-              Book an appointment
+              رزرو نوبت
             </button>
           </div>
-
-          {/* Related Doctors Section */}
-          {/* <RelatedDoctors docId={docId} speciality={docIn÷fo.speciality} /> */}
+          {/* Calender */}
         </div>
+        {/* Doctor Details */}
       </Container>
     </MainLayout>
   );
