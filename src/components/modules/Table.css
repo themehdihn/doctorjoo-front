@@ -1,0 +1,11 @@
+.my-table {
+  background-color: var(--color-secondary-0);
+  overflow-x: auto;
+}
+.table__row {
+  transition: all 0.3s ease;
+}
+
+.table__row:hover {
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1); 
+}

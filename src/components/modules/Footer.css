@@ -2,7 +2,7 @@
   background-color: white;
   padding: 3rem;
   border-radius: 1rem;
-  margin-top: 5rem;
+  margin-top: 8rem;
   box-shadow: 0 0.4rem 4rem 0 rgba(0, 0, 0, 0.107);
   border-radius: 2rem;
   margin-bottom: 2rem;
@@ -20,9 +20,9 @@
 .footer__description {
   text-align: justify;
   font-weight: 400;
-  font-size: 1.2rem;
+  font-size: .75rem;
   line-height: 1.8;
-  color: rgba(75, 85, 099);
+  color: var(--color-secondary-600);
 }
 
 .footer__links,
@@ -37,8 +37,8 @@
 .footer__links-title {
   text-align: right;
   font-weight: 700;
-  font-size: 2rem;
-  color: var(--color-primary);
+  font-size: 1.25rem;
+  color: var(--color-primary-900);
   /* margin-bottom: 2rem; */
 }
 
@@ -48,19 +48,19 @@
   /* align-items: center; */
   width: 66%;
   font-weight: 400;
-  font-size: 1.4rem;
+  font-size: .875rem;
   gap: 2rem;
   white-space: nowrap;
 }
 
 .footer__menu-item {
   cursor: pointer;
-  color: rgba(75, 85, 099);
+  color: var(--color-secondary-600);
   transition: all 0.3s ease-in-out;
 }
 
 .footer__menu-item:hover {
-  color: var(--color-primary);
+  color: var(--color-primary-900);
 }
 
 .footer__enamad {
@@ -81,4 +81,5 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: center;
 }

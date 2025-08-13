@@ -1,0 +1,26 @@
+.cover-image {
+  position: relative;
+  /* aspect-ratio: 16 / 9; */
+  max-width: 20rem;
+  margin: 0 auto;
+  border: 1px solid var(--color-secondary-100);
+  overflow: hidden;
+  /* margin: 0 auto; */
+  border-radius: 0.5rem; /* معادل rounded-lg */
+}
+
+.cover-image__img {
+  object-fit: cover;
+  object-position: center;
+}
+
+.cover-image__remove-btn {
+  position: absolute;
+  left: 0.7rem;
+  width: 1.5rem; /* 24px */
+  height: 1.5rem;
+}
+
+.cover-image__remove-btn:hover {
+  transform: scale(1.1);
+}

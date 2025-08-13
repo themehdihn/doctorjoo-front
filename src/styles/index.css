@@ -1,11 +1,33 @@
 @import url("../../public/font.css");
 
 :root {
-  --color-primary: #006dff;
-  --color-primary-hover: #0a58bd;
-  --color-secondary: #002f72;
-  --color-text: #2d3245;
-  --color-dotted: #22c55e;
+  --color-primary-900: rgb(74, 109, 255);
+  --color-primary-800: rgb(92, 124, 255);
+  --color-primary-700: #6e8aff;
+  --color-primary-600: rgb(128, 153, 255);
+  --color-primary-500: rgb(146, 167, 255);
+  --color-primary-400: rgb(164, 182, 255);
+  --color-primary-300: rgb(183, 197, 255);
+  --color-primary-200: rgb(201, 211, 255);
+  --color-primary-100: rgb(219, 226, 255);
+  --color-primary-50: #e4e9ff;
+  --color-secondary-900: rgb(17, 24, 39);
+  --color-secondary-800: rgb(31, 41, 55);
+  --color-secondary-700: rgb(55, 65, 81);
+  --color-secondary-600: rgb(75, 85, 99);
+  --color-secondary-500: rgb(107, 114, 128);
+  --color-secondary-400: rgb(156, 163, 175);
+  --color-secondary-300: rgb(209, 213, 219);
+  --color-secondary-200: rgb(229, 231, 235);
+  --color-secondary-100: rgb(243, 244, 246);
+  --color-secondary-50: rgb(249, 250, 251);
+  --color-secondary-0: rgb(255, 255, 255);
+  --color-success: rgb(0, 192, 115);
+  --color-warning: rgb(255, 153, 0);
+  --color-error: #ff4757;
+
+  --color-dotted-active: #22c55e;
+  --color-dotted-deactive: #ff4757;
   --bg-color: #fff;
 }
 
@@ -17,92 +39,148 @@
   padding: 0;
 }
 
-html {
-  font-size: 62.5%;
-  scroll-behavior: smooth;
+html,
+body {
+  padding: 0;
+  margin: 0;
+  font-family: "Vazir";
+  min-height: 100vh;
+  /* user-select: none; */
+  background-color: rgb(var(--bg-color));
+  /* font-size: 62.5%; */
 }
 
-body {
-  min-height: 100vh;
-  font-family: "Vazir";
-  /* user-select: none; */
-  overflow-x: hidden;
-  background-color: var(--bg-color);
+* {
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+  /* border: none; */
+  outline: none;
+  padding: 0;
+  margin: 0;
 }
 
 a {
-  color: #252525;
   text-decoration: none;
 }
 
-ul,
-ol {
+ol,
+ul {
   list-style: none;
-}
-
-img,
-picture,
-video,
-canvas,
-svg {
-  display: block;
-  max-width: 100%;
-  height: auto;
-}
-
-input,
-button,
-textarea,
-select {
-  font: inherit;
-  color: inherit;
-  background: none;
-  border: none;
-  outline: none;
 }
 
 button {
   cursor: pointer;
-  background-color: transparent;
+  outline: none;
+  border: none;
+  font-family: inherit;
+  background: none;
+}
+button:disabled {
+  cursor: default;
+  background-color: var(--color-secondary-100);
+  color: var(--color-secondary-400);
+  border-color: transparent;
+  pointer-events: none;
+  box-shadow: none;
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-p {
-  font-weight: inherit;
-  font-size: inherit;
+/* inupt number */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  /* display: none; <- Crashes Chrome on hover */
+  -webkit-appearance: none;
+  margin: 0; /* <-- Apparently some margin are still there even though it's hidden */
 }
+
+input[type="number"] {
+  -moz-appearance: textfield; /* Firefox */
+}
+
+/* TABLE */
 
 table {
   border-collapse: collapse;
+  border-spacing: 0;
   width: 100%;
 }
 
-article,
-aside,
-details,
-figcaption,
-figure,
-footer,
-header,
-main,
-nav,
-section,
-summary {
-  display: block;
+table .title-row {
+  background-color: var(--color-secondary-100);
 }
+
+table td,
+table th {
+  border-bottom: 1px solid var(--color-secondary-200);
+  text-align: right;
+  white-space: nowrap;
+}
+
+table th {
+  padding: 0.6rem 1rem;
+  color: rgb(var(--color-secondary-600));
+  font-size: 0.9rem;
+}
+
+table td {
+  font-size: 0.85rem;
+  padding: 1rem 1rem;
+  color: rgb(var(--color-secondary-600));
+}
+
+.text-field {
+  margin-bottom: 1rem; /* فاصله پایین کامپوننت */
+}
+
+.text-field__label {
+  display: block;
+  margin-bottom: 0.5rem;
+  color: var(--color-secondary-700); /* معادل text-secondary-700 */
+  font-weight: 500;
+  font-size: .875rem;
+}
+
+.text-field__label .text-error {
+  color: var(--color-error); /* رنگ خطا (مثل text-error) */
+}
+
+.text-field__input {
+  width: 100%;
+  padding: .75rem 1rem; /* py-3 px-4 */
+  border-radius: 0.75rem /* 12px */;
+  color: var(--color-secondary-900); /* معادل text-secondary-900 */
+  border: 1px solid var(--color-secondary-100); /* border-secondary-100 */
+  background-color: var(--color-secondary-50); /* bg-secondary-100 */
+  transition: all 0.3s ease-out;
+  outline: none;
+  font-size: 1rem;
+  font-family: inherit;
+}
+
+.text-field__input:hover {
+  border-color: var(--color-primary-500); /* hover:border-primary-500 */
+}
+
+.text-field__input:focus {
+  border-color: var(--color-primary-500); /* focus:border-primary-500 */
+  background-color: var(--bg-secondary-0); /* focus:bg-secondary-0 */
+  box-shadow: 0 10px 15px -3px rgba(59, 130, 246, 0.4),
+    0 4px 6px -2px rgba(59, 130, 246, 0.3); /* focus:shadow-lg focus:shadow-primary-200 */
+}
+
+.text-field__error {
+  display: block;
+  margin-top: 1rem;
+  font-size: .875rem; /* text-sm */
+  color: var(--color-error); /* رنگ خطا */
+}
+
 
 .container {
-  position: relative;
   width: 100%;
-  padding: 0 1.6rem;
-  margin: 0 auto;
-  /* margin-left: auto;
-  margin-right: auto; */
+  margin-right: auto;
+  margin-left: auto;
+  padding-right: 1rem /* 16px */;
+  padding-left: 1rem /* 16px */;
 }
 
 .glow-circle {
@@ -130,8 +208,8 @@ summary {
 .dot-container {
   position: relative;
   display: inline-flex;
-  height: 12px; 
-  width: 12px; 
+  height: 12px;
+  width: 12px;
   margin-right: 4px;
 }
 
@@ -140,8 +218,7 @@ summary {
   display: inline-flex;
   height: 100%;
   width: 100%;
-  border-radius: 9999px; 
-  background-color: var(--color-dotted); 
+  border-radius: 9999px;
   opacity: 0.75;
   animation: ping 1s cubic-bezier(0, 0, 0.2, 1) infinite;
 }
@@ -151,20 +228,91 @@ summary {
   display: inline-flex;
   height: 100%;
   width: 100%;
-  border-radius: 9999px; 
-  background-color: var(--color-dotted);
+  border-radius: 9999px;
 }
 
+.dot-ping--active {
+  background-color: var(--color-dotted-active);
+}
+
+.dot-ping--deactive {
+  background-color: var(--color-dotted-deactive);
+}
+
+.dot-static--active {
+  background-color: var(--color-dotted-active);
+}
+
+.dot-static--deactive {
+  background-color: var(--color-dotted-deactive);
+}
 
 @keyframes ping {
-    75%,to {
-        transform: scale(2);
-        opacity: 0
-    }
+  75%,
+  to {
+    transform: scale(2);
+    opacity: 0;
+  }
 }
 
 .animate-ping {
-    animation: ping 1s cubic-bezier(0,0,.2,1) infinite
+  animation: ping 1s cubic-bezier(0, 0, 0.2, 1) infinite;
+}
+
+.btn {
+  padding: 0.4rem 1.2rem;
+  font-weight: bold;
+  border-radius: 1.2rem;
+  transition: all;
+  transition-duration: 300ms;
+}
+.btn--primary {
+  padding: 1.2rem 1.6rem;
+  background: var(--color-primary-900);
+  color: white;
+  box-shadow: 0 1px 2px 0 var(--color-primary-600);
+}
+.btn--primary:hover {
+  background: var(--color-primary-800);
+}
+
+.btn--secondary {
+  background-color: var(--color-secondary-600);
+  color: var(--color-secondary-100);
+}
+.btn--outline {
+  border-width: 1px;
+  border-style: solid;
+  border-color: var(--color-secondary-700);
+  color: var(--color-secondary-700);
+}
+.btn--danger {
+  border: 1px solid rgb(190, 18, 60);
+  color: rgb(190, 18, 60);
+}
+
+.badge {
+  padding: 0.25rem 0.75rem; /* فضای داخلی */
+  border-radius: 9999px; /* گرد کامل */
+  font-weight: 500; /* ضخامت فونت متوسط */
+  font-size: 0.875rem; /* سایز متن */
+  display: inline-block;
+}
+
+/* وضعیت‌ها */
+.badge--danger {
+  background-color: #fee2e2; /* قرمز روشن */
+  color: #b91c1c; /* قرمز تیره */
+}
+
+.badge--secondary {
+  background-color: #e5e7eb; /* خاکستری روشن */
+  color: #374151; /* خاکستری تیره */
+}
+
+.badge--success {
+  background-color: #dcfce7; /* سبز روشن */
+  color: #15803d; /* سبز تیره */
 }
 
 @media (min-width: 640px) {
@@ -194,4 +342,8 @@ summary {
   }
 }
 
-
+@media (min-width: 1536px) {
+  .container {
+    max-width: 1536px;
+  }
+}

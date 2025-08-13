@@ -1,0 +1,15 @@
+.dashboard-header {
+  margin-bottom: 2rem;
+}
+
+.dashboard-header__title {
+  font-weight: bold;
+  font-size: 1.5rem /* 24px */;
+  line-height: 2rem /* 32px */;
+  color: var(--color-secondary-900);
+  margin-bottom: 0.5rem;
+}
+
+.dashboard-header__text {
+  color: var(--color-secondary-600);
+}

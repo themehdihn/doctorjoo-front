@@ -1,7 +1,7 @@
 import React, { useContext, useEffect, useRef, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
-import MainLayout from "../components/layouts/MainLayout";
-import Container from "../components/Container";
+
+import Container from "../components/modules/Container";
 
 import toast from "react-hot-toast";
 import SlotSelector from "../components/modules/SlotSelector";
@@ -9,8 +9,9 @@ import SlotSelector from "../components/modules/SlotSelector";
 import "../styles/doctor-details.css";
 import { AppContext } from "../context/AppContext";
 import axios from "axios";
-import { InfoCircle } from "iconsax-reactjs";
+import { Clock, InfoCircle, Location, Money } from "iconsax-reactjs";
 import { formatToShamsiDate, toLocalDateShort } from "../utils/dateFormatter";
+import MainLayout from "../components/modules/MainLayout";
 
 function DoctorDetails() {
   const { docId } = useParams();
@@ -176,18 +177,28 @@ function DoctorDetails() {
               </div>
               {/* Doctor Image */}
               <div className="doctor-details__content-info">
-                <h2 className="doctor-details__content-info-name">
+               <div className="doctor-details__content-info-wrapper">
+                 <h2 className="doctor-details__content-info-name">
                   دکتر علی جعفری
                 </h2>
                 <p className="doctor-details__content-info-specialty">
                   متخصص قلب و عروق
                 </p>
                 <p className="doctor-details__content-info-address">
+                  <Location size={20}/>
                   آدرس مطب: همدان کوچه فلان خیابان فلان مجتمع فلان
                 </p>
                 <p className="doctor-details__content-info-firstappo">
+                  <Clock size={20}/>
                   اولین نوبت در دسترس : دوشنبه ۲۹ مرداد
                 </p>
+               </div>
+               {/* Info Wrapper */}
+               <p className="doctor-details__content-info-fees">
+                <Money size={24}/>
+                55,000 تومان
+               </p>
+               {/* Fees */}
               </div>
               {/* Info */}
             </div>

@@ -1,0 +1,26 @@
+/* بلوک اصلی */
+.confirm-delete {
+  padding: 1rem;
+}
+
+/* عنوان مودال */
+.confirm-delete__title {
+  font-weight: bold;
+  font-size: 1rem;
+  margin-bottom: 2rem; /* معادل mb-8 */
+}
+
+/* بخش دکمه‌ها */
+.confirm-delete__actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 4rem; /* معادل gap-x-16 */
+}
+
+/* دکمه‌های داخلی */
+.confirm-delete__btn {
+  flex: 1;
+  padding: 0.75rem 1rem; /* برای btn--danger هم py-3 رو پوشش میده */
+}
+

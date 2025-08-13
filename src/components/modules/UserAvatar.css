@@ -1,0 +1,18 @@
+.user-avatar{
+    display: flex;
+    align-items: center;
+    gap:.8rem;
+    color: var(--color-secondary-600);
+}
+
+.user-avatar__img{
+    width: 1.75rem /* 28px */;
+    height: 1.75rem /* 28px */;
+    object-fit: cover;
+    object-position: center;
+}
+
+.user-avatar__name{
+    font-size: .875rem;
+    font-weight: 400;
+}

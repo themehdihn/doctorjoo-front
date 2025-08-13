@@ -177,9 +177,10 @@
 .doctor-details {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 2rem;
+  gap: 3rem;
   margin-top: 4rem;
 }
+
 .doctor-details__wrapper {
   grid-column: 1 / 3;
   background-color: white;
@@ -188,7 +189,7 @@
 }
 
 .doctor-details__content-cover-wrapper {
-  max-width: 15rem;
+  max-width: 11rem;
   height: auto;
 }
 
@@ -196,15 +197,22 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
-  background-color: #e7e7e7;
-  border-radius: 0.2rem;
+  border-radius: 0 6px 6px 0;
+  background: linear-gradient(to bottom right, #fff 0%, #6e8aff 50%) bottom
+      right / 50% 50% no-repeat,
+    linear-gradient(to bottom left, #fff 0%, #6e8aff 50%) bottom left / 50% 50%
+      no-repeat,
+    linear-gradient(to top left, #fff 0%, #6e8aff 50%) top left / 50% 50%
+      no-repeat,
+    linear-gradient(to top right, #fff 0%, #6e8aff 50%) top right / 50% 50%
+      no-repeat;
 }
 
 .doctor-details__content {
   display: flex;
   /* align-items: center; */
-  flex-wrap: wrap;
-  gap: 1rem;
+  /* flex-wrap: wrap; */
+  gap: 1.5rem;
   padding: 1.5rem;
   padding-bottom: 3rem;
   border-bottom: 1px solid #e7e7e78f;
@@ -212,27 +220,52 @@
 }
 
 .doctor-details__content-info {
+  width: 100%;
+  display: flex;
+  align-items: start;
+  justify-content: space-between;
+  gap: 1.5rem;
+}
+
+.doctor-details__content-info-fees {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  font-size: 0.875rem;
+  color: #6d6d6d;
+}
+
+.doctor-details__content-info-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: .8rem;
 }
 
 .doctor-details__content-info-name {
-  font-size: 2rem;
-  color: rgb(17, 24, 39);
+  font-size: 1.25rem;
+  color: var(--color-secondary-900);
   font-weight: 700;
 }
 
 .doctor-details__content-info-specialty {
-  font-size: 1.4rem;
-  color: rgb(75, 85, 99);
+  font-size: 1rem;
+  color: var(--color-secondary-700);
 }
 
 .doctor-details__content-info-address {
-  color: rgb(107, 114, 128);
-  font-size: 1.4rem;
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  color: var(--color-secondary-700);
+  font-size: 0.875rem;
 }
 
 .doctor-details__content-info-firstappo {
-  color: rgb(107, 114, 128);
-  font-size: 1.4rem;
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  color: var(--color-secondary-700);
+  font-size: 0.875rem;
 }
 
 .doctor-details__bio {
@@ -243,22 +276,23 @@
 .doctor-details__bio-title {
   display: flex;
   align-items: center;
-  gap: 1rem;
+  gap: 0.5rem;
+  color: var(--color-secondary-700);
   font-weight: 600;
-  font-size: 1.8rem;
+  font-size: 1.125rem;
   line-height: 157.3%;
   margin-bottom: 1.3rem;
 }
 
 .doctor-details__bio-description {
-  font-size: 1.4rem;
+  line-height: 1.8;
+  font-size: 0.875rem;
   font-weight: 400;
   color: #5d5d5d;
 }
 
 .doctor-details__calender {
-  background-color: white;
-   box-shadow: 0 4px 40px 0 rgba(0, 0, 0, 0.05);
+  box-shadow: 0 4px 40px 0 rgba(0, 0, 0, 0.05);
   border-radius: 1rem;
   padding: 1.5rem;
 }
@@ -272,12 +306,12 @@
 }
 
 .doctor-details__calender-title {
-  font-size: 1.8rem;
+  font-size: 1.125rem;
   font-weight: bold;
 }
 
 .doctor-details__calender-date {
-  font-size: 1.5rem;
+  font-size: 1rem;
   font-weight: 400;
   color: #888888;
 }
@@ -285,7 +319,7 @@
 .doctor-details__calender-slots {
   display: grid;
   grid-template-columns: repeat(7, 1fr);
-  gap: 0.7rem;
+  gap: 0.5rem;
   margin-top: 1.5rem;
 }
 
@@ -293,24 +327,25 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 1.2rem;
-  min-width: 4rem;
-  background-color: #F7F7F7;
+  padding: 1rem 1.7rem ;
+  min-width: 2rem;
+  background-color: #f7f7f7;
+  font-size: .775rem;
   /* border: 1px solid #e5e7eb; */
   border-radius: 1rem;
   cursor: pointer;
 }
 
 .doctor-details__slot--active {
-  background-color: var(--color-primary);
+  background-color: var(--color-primary-900);
   color: #ffffff;
 }
 
 .doctor-details__calender-button {
   width: 100%;
-  background-color: var(--color-primary);
+  background-color: var(--color-primary-900);
   color: #ffffff;
-  font-size: 1.6rem;
+  font-size: 1rem;
   font-weight: 500;
   padding: 1rem;
   border-radius: 1rem;

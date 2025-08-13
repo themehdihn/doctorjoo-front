@@ -1,6 +1,6 @@
 .slot-selector {
-  margin-top: 3rem;
   direction: rtl;
+  margin-top: 3rem;
 }
 
 .slot-selector__button-container {
@@ -25,7 +25,7 @@
   padding: 1rem 2rem;
   border: 1px solid #e5e7eb;
   border-radius: 1rem;
-  font-size: 1.2rem;
+  font-size: .75rem;
   color: #374151;
   cursor: pointer;
   white-space: nowrap;
@@ -33,7 +33,7 @@
 }
 
 .slot-selector__slot--active {
-  background-color: var(--color-primary);
+  background-color: var(--color-primary-900);
   color: #ffffff;
 }
 

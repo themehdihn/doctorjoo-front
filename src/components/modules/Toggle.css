@@ -1,0 +1,60 @@
+/* بلاک اصلی */
+.toggle {
+  /* هیچ استایل خاصی نیاز نیست برای Group چون کانتینر داره */
+}
+
+/* کانتینر فلکسی */
+.toggle__container {
+  display: flex;
+  align-items: center;
+}
+
+/* برچسب */
+.toggle__label {
+  margin-right: 1rem; /* معادل mr-4 */
+  padding: 0.25rem; /* معادل p-1 */
+  user-select: none; /* جلوگیری از سلکت شدن متن هنگام کلیک */
+}
+
+/* سوییچ اصلی */
+.toggle__switch {
+  position: relative;
+  display: inline-flex;
+  height: 1.5rem;  /* h-6 => 24px */
+  width: 2.75rem;  /* w-11 => 44px */
+  align-items: center;
+  border-radius: 9999px; /* rounded-full */
+  transition: background-color 0.3s ease;
+  cursor: pointer;
+}
+
+/* پس‌زمینه فعال */
+.toggle__switch--enabled {
+  background-color: var(--color-primary-900); /* bg-primary-900 - آبی تیره */
+}
+
+/* پس‌زمینه غیرفعال */
+.toggle__switch--disabled {
+  background-color: var(--color-secondary-200); /* bg-secondary-200 - خاکستری روشن */
+}
+
+/* هندل (دکمه) */
+.toggle__handle {
+  display: inline-block;
+  height: 1rem;  /* h-4 => 16px */
+  width: 1rem;   /* w-4 => 16px */
+  background-color: white;
+  border-radius: 9999px; /* rounded-full */
+  transition: transform 0.3s ease;
+  transform: translateX(0); /* مقدار اولیه */
+}
+
+/* هندل در حالت فعال (به چپ حرکت کرده) */
+.toggle__handle--enabled {
+  transform: translateX(-1.5rem); /* -translate-x-6 معادل جابجایی 24px */
+}
+
+/* هندل در حالت غیرفعال (نزدیک سمت چپ) */
+.toggle__handle--disabled {
+  transform: translateX(-0.25rem); /* -translate-x-1 معادل جابجایی 4px */
+}

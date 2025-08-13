@@ -1,35 +1,28 @@
 .nav-link {
   display: flex;
   align-items: center;
-  gap: 0.5rem; /* معادل gap-x-2 */
-  padding: 0.375rem 0.5rem; /* معادل px-2 py-1.5 */
-  border-radius: 0.5rem; /* معادل rounded-lg */
-  transition: all 300ms ease; /* معادل transition-all duration-300 */
-  text-decoration: none;
-  position: relative; /* برای موقعیت‌دهی شبه‌المان :before */
+  column-gap: 0.5rem;
+  padding: 0.375rem 0.5rem;
+  border-radius: 0.5rem;
+  border-radius: 0.5rem /* 8px */;
+  transition-property: all;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 300ms;
+  font-size: 1rem;
 }
 
 .nav-link--inactive {
-  color: #4b5563; /* معادل text-secondary-600 */
+  color: var(--color-secondary-600);
 }
 
 .nav-link--inactive:hover {
-  color: #1e40af; /* معادل hover:text-primary-900 */
+  color: var(--color-primary-900);
 }
 
 .nav-link--active {
-  color: #1e40af; /* معادل text-primary-900 */
-}
-
-.nav-link--active::before {
-  content: "";
-  position: absolute;
-  bottom: -5px; /* فاصله خط از پایین لینک */
-  left: 0;
-  right: 0;
-  width: 100%; /* عرض خط برابر با عرض لینک */
-  height: 2px; /* ضخامت خط */
-  background-color: #1e40af; /* رنگ خط (هم‌رنگ text-primary-900) */
+   background-color: #f3f5ff;
+  color: var(--color-primary-900);
+  font-weight: bold;
 }
 
 .nav-link__item {

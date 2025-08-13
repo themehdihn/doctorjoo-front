@@ -1,0 +1,14 @@
+.doctor-header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 2rem /* 32px */;
+}
+
+.doctor-header__btn{
+    display: flex;
+    align-items: center;
+    column-gap: 0.5rem /* 8px */;
+    font-size: .875rem;
+    padding: .8rem!important;
+}

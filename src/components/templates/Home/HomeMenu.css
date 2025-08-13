@@ -1,0 +1,17 @@
+.home-menu {
+  display: flex;
+  align-items: center;
+  gap: 1.6rem;
+}
+
+.home-menu__actions-btn {
+  color: white;
+  background-color: var(--color-primary-900);
+  font-size: 1rem;
+  font-weight: bold;
+  padding: .7rem 1.5rem;
+  border-radius: 1rem;
+}
+.home-menu__actions-btn:hover {
+  background-color: var(--color-primary-700);
+}

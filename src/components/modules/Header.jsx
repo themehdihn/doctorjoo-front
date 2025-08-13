@@ -1,32 +1,31 @@
-import CustomNavLink from "./CustomNavLink";
+import { HamburgerMenu } from "iconsax-reactjs";
+import useUser from "../../hooks/useUser";
 import "./Header.css";
+import HeaderMenu from "./HeaderMenu";
+import UserAvatar from "./UserAvatar";
 
 function Header() {
-  return (
-    <header className="header">
-      <div className="header__logo">
-        <img
-          className="header__logo-img"
-          src="../../../public/logo.svg"
-          alt=""
-        />
-      </div>
-      {/* Logo */}
+  const { user, isLoading } = useUser();
 
-      <ul className="header__nav">
-        <CustomNavLink to="/">صفحه اصلی</CustomNavLink>
-        <CustomNavLink to="/doctors">پزشکان</CustomNavLink>
-        <CustomNavLink to="/contact">تماس با ما</CustomNavLink>
-        <CustomNavLink to="/about">درباره ما</CustomNavLink>
-      </ul>
-      {/* Nav */}
-      <div className="header__actions">
-        <a className="header__actions-btn" href="">
-          ورود / ثبت نام
-        </a>
+  return (
+    <div className="header">
+      <div className="header__wrapper container">
+        <div>
+          <p>{user?.name} خوش آمدی 😍</p>
+          <button
+            //   onClick={onOpen}
+            className="header__btn"
+          >
+            {/* <HiMenuAlt3 className="size-full text-secondary-900" /> */}
+            <HamburgerMenu className="header__btn-icon" />
+          </button>
+        </div>
+        <div className={`header__actions ${isLoading && "blur-sm opacity-50"}`}>
+          <UserAvatar />
+          <HeaderMenu />
+        </div>
       </div>
-      {/* Actions */}
-    </header>
+    </div>
   );
 }
 

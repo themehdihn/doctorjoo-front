@@ -1,0 +1,10 @@
+
+
+/* راست‌چین یا چپ‌چین */
+.text-field__input--rtl {
+  text-align: right;
+}
+
+.text-field__input--ltr {
+  text-align: left;
+}

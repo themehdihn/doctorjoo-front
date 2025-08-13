@@ -1,0 +1,7 @@
+.panel-title {
+  font-weight: 900;
+  color: var(--color-secondary-700);
+  margin-bottom: 1rem /* 32px */;
+  font-size: 1.25rem /* 20px */;
+  line-height: 1.75rem /* 28px */;
+}

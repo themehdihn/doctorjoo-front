@@ -1,0 +1,47 @@
+/* بلاک اصلی */
+.auth-tabs {
+  /* max-width: 400px; */
+  /* margin: 0 auto; */
+  /* background: red; */
+  /* border-radius: 8px; */
+  /* box-shadow: 0 2px 8px rgba(0,0,0,0.1); */
+  /* padding: 20px; */
+}
+
+/* هدر تب‌ها */
+.auth-tabs__header {
+  display: flex;
+  
+  margin-bottom: 20px;
+}
+
+/* تب‌ها */
+.auth-tabs__tab {
+  flex: 1;
+  text-align: center;
+  padding: 10px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-weight: 500;
+  font-size: 1.6rem;
+  color: #777;
+  transition: all 0.3s;
+  border-bottom: 2px solid #eee;
+}
+
+.auth-tabs__tab:hover {
+  color: var(--color-primary-900);
+}
+
+.auth-tabs__tab--active {
+  border-bottom: 2px solid var(--color-primary-900);
+  color: var(--color-primary-900);
+  font-weight: bold;
+}
+
+/* محتوای تب */
+.auth-tabs__content {
+  padding-top: 10px;
+}
+

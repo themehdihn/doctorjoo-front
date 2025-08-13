@@ -1,0 +1,56 @@
+.doctor-list {
+  margin-top: 5rem;
+}
+
+.doctor-list__content {
+  text-align: center;
+}
+
+.doctor-list__title {
+  font-size: 1.5rem;
+  line-height: 200%;
+  font-weight: 900;
+  color: var(--color-secondary-800);
+  margin-bottom: 1rem;
+}
+
+.doctor-list__description-wrapper {
+  display: flex;
+  justify-content: center;
+}
+
+.doctor-list__description {
+  max-width: 30rem;
+  font-weight: 400;
+  font-size: 1rem;
+  line-height: 35px;
+  color: var(--color-secondary-600);
+}
+
+.doctor-list__separator {
+  max-width: 30%;
+  height: 0.1rem;
+  margin: 2.5rem auto;
+  background-color: rgba(163, 163, 163, 0.298);
+}
+
+.doctor-list__wrapper {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 1.562rem;
+}
+
+.doctor__list-more {
+  display: flex;
+  justify-content: center;
+  margin: 8rem 0;
+}
+
+.doctor__list-more-btn {
+  font-weight: 400;
+  font-size: 1rem;
+  background-color: var(--color-primary-900);
+  padding: 1rem 2rem;
+  color: white;
+  border-radius: 1rem;
+}

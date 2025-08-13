@@ -1,8 +1,10 @@
 import React, { useEffect } from "react";
-import MainLayout from "../components/layouts/MainLayout";
+
 import DoctorsWrapper from "../components/templates/Doctors/DoctorsWrapper";
 import { doctorsData } from "../constants/doctorData";
-import DoctorCart from "../components/modules/Cart/DoctorCart";
+
+import MainLayout from "../components/modules/MainLayout";
+import DoctorCart from "../components/modules/DoctorCart";
 
 function Doctors() {
 
